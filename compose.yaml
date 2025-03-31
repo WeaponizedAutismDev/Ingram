@@ -1,0 +1,16 @@
+
+version: '3.8'
+
+services:
+  ingram:
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./input:/app/input
+      - ./output:/app/output
+    environment:
+      - PYTHONUNBUFFERED=1
+    # Network mode host may be needed for proper scanning
+    # Uncomment the next line if you have issues with network access
+    # network_mode: host
+    command: -i /app/input/targets -o /app/output -t 500

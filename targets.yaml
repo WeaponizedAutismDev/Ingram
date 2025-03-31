@@ -1,0 +1,14 @@
+# Sample target file for Ingram scanner
+# use '#' to comment
+
+# single ip
+192.168.0.1
+
+# ip with a port
+192.168.0.2:80
+
+# ip segment ('/')
+192.168.0.0/24
+
+# ip segment ('-')
+192.168.1.1-192.168.1.10
