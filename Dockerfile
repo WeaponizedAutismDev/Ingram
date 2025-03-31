@@ -17,10 +17,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Create directories with proper permissions
-RUN mkdir -p /app/input /app/output /app/data && \
-    chmod 755 /app/input && \
-    chmod 777 /app/output && \
-    chmod 755 /app/data
+RUN mkdir -p /app/input /app/output/snapshots /app/data && \
+    chmod -R 775 /app && \
+    chmod -R 775 /app/input && \
+    chmod -R 775 /app/output && \
+    chmod -R 775 /app/output/snapshots && \
+    chmod -R 775 /app/data
 
 # Default command (can be overridden)
 ENTRYPOINT ["python3", "run_ingram.py"]

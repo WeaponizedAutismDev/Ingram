@@ -8,9 +8,10 @@ services:
       - ./data:/app/data
       - ./input:/app/input
       - ./output:/app/output
+      - ./output/snapshots:/app/output/snapshots
     environment:
       - PYTHONUNBUFFERED=1
     # Network mode host may be needed for proper scanning
     # Uncomment the next line if you have issues with network access
-    # network_mode: host
-    command: -i /app/input/targets -o /app/output -t 500
+    network_mode: host
+    command: -i /app/input/targets.txt -o /app/output -t 500

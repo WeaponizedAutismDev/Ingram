@@ -1,4 +1,6 @@
 
+
+```bash 
 # Build the Docker image
 docker build -t ingram-scanner .
 
@@ -11,5 +13,12 @@ docker run -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output ingram-scanne
 # Run with increased concurrency
 docker run -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output ingram-scanner -i /app/input/targets -o /app/output -t 1000
 
+
+```powershell 
+# Run a simple scan with default settings
+docker run -v ${PWD}/input:/app/input -v ${PWD}/output:/app/output ingram-scanner -i /app/input/targets -o /app/output
+
+
+```bash
 # Run with Docker Compose (simplest option)
 docker-compose up
